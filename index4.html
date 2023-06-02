@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 5</title>
+  <link rel="stylesheet" href="style.css">
+    <script src="test5.js" type="module">
+    </script>
+</head>
+<body>
+  <h1>Clue 5</h1>
+  <div id = "question5">
+
+  </div>
+  <br>
+  <div class = "hidden" class = "wheel" >
+    <div id = "key2">
+    <br>
+      <p>Enter the key to decode the message:
+      <input type = "text" id="key3"></p>
+    </div>
+    <div id="possibility">
+        <table class ="hidden" >
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
+                <th>I</th>
+                <th>J</th>
+                <th>K</th>
+                <th>L</th>
+                <th>M</th>
+                <th>N</th>
+                <th>O</th>
+                <th>P</th>
+                <th>Q</th>
+                <th>R</th>
+                <th>S</th>
+                <th>T</th>
+                <th>U</th>
+                <th>V</th>
+                <th>W</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>Z</th>
+            </tr>
+            <tr class = "data">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <img src = "lock.png" width="200" height="200">
+    </div>
+    <br>
+    <div class = "wheel2">
+        <label for = "answer5" class="hidden">Decoded Message: </label>
+        <input type = "text" id="answer5" autocomplete="off" class="hidden">
+        <button id="submit2" class="hidden">Submit</button>
+    </div>
+</div>
+<script>
+  let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let table_data = document.querySelectorAll('td')
+  document.getElementById('key3').addEventListener("keypress",function(event){
+    if(event.key === "Enter"){
+        var key = parseInt(document.getElementById('key3').value);
+        for (let i=0;i<=26;i++){
+            table_data[i].innerHTML = letters[i+key]
+            if (i+key>25){
+                table_data[i].innerHTML = letters[i+key-26]
+            }
+        }
+        }
+    }
+)
+
+document.getElementById('submit2').addEventListener('click',()=>{
+    answer5 = document.getElementById('answer5').value;
+
+    if(answer5.toLowerCase()==='i see only the possibilities not the obstacles'){
+        window.location.href= "index5.html";
+    }
+
+    else{
+        alert('Try again! Not the right answer')
+    }
+})
+
+</script>
+</body>
+</html>

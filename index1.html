@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question2</title>
+  
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+
+  body{
+    background: black;
+  }
+  .question2{
+    font-family: 'Special Elite';
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    gap: 80px;
+  }
+
+  .question2{
+    display: none;
+    
+  }
+
+  #text{
+    color: white;
+    font-size: 20px;
+    font-family: 'Special Elite';
+    line-height: 1.5;
+    margin: 60px;
+  }
+
+  label{
+    font-size: 20px;
+  }
+
+  #answer2{
+    font-size: 20px;
+  }
+
+  .riddle2{
+    color: white;
+  }
+
+  .riddle{
+    color: red;
+  }
+
+  #submit{
+  width: 100px;
+  height: 48px;
+  background-color: white;
+  color:black;
+  font-size: 20px;
+}
+
+  #submit:active{
+    background-color: black;
+    color: white;
+  }
+
+  .galaxy{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  h1{
+    margin-top: 20px;
+    color: white;
+    font-family: "Special Elite";
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+  <h1>Clue 2</h1>
+  <div id = "text">
+
+  </div>
+  <div class = "question2">
+    <div class = "riddle">
+      <p>I am a symbol of unity and connection,</p>
+      <p>Unlock my secrets with precise selection.</p>
+      <p>In the realm of stars, I hold the key,</p>
+      <p>To unravel mysteries for those who see.</p>
+      <p>What am I?"</p>
+    </div>
+    <div class = "riddle2">
+      <p>Please choose the appropriate option (a, b, c, or d) as the answer to the riddle:</p>
+      <p>A. Constellation Map: A celestial chart revealing the positions and patterns of stars and galaxies.</p>
+      <p>B. Quantum Harmonizer: A device that harmonizes quantum fluctuations, enabling access to alternate dimensions.</p>
+      <p>C. Neural Interface: A technology that allows direct connection and communication with advanced extraterrestrial civilizations.</p>
+      <p>D. Universal Language Matrix: A repository of all known alien languages, allowing for instant translation and communication.</p>
+      <div class = "galaxy">
+        <label for = "answer2">Your Answer: </label>
+        <br>
+        <input type = "text" id = "answer2" autocomplete="off">
+        <br>
+        <button id = "submit">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    string_text = "Hello Earthlings! Intrigued by this message, she realizes it might be a clue to something important. Sarah searches through the institute's archives and finds a reference to an ancient artifact known as the 'Galactic Keystone'. Legends suggest that the Keystone holds immense power and can unlock hidden knowledge of the universe. The only clue she has is a riddle:"
+    var my_array = string_text.split("");
+    var loopTimer;
+    function typedtext(){
+    if (my_array.length>0){
+        document.getElementById('text').innerHTML += my_array.shift();
+    }
+    else{
+        document.querySelector('.question2').style.display = "flex";
+        clearTimeout(loopTimer);
+        return false;
+    }
+    loopTimer = setTimeout('typedtext()',35);
+  }
+
+  typedtext()
+
+  document.getElementById('submit').addEventListener('click',()=>{
+    answer2 = document.getElementById('answer2').value;
+    if(answer2.toLowerCase()==='a'){
+        window.location.href= "index2.html";
+    }
+
+    else{
+        alert('Try again! Not the right answer')
+    }
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 10</title>
+  <link rel="stylesheet" href="style.css">
+  <script src = "test10.js" type = "module"></script>
+</head>
+<body>
+  <h1>The Final Search</h1>
+  
+    <div id = "text10">
+
+    </div>
+    
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  <div class ="container10">
+    <div class="container11">
+      <p class="hidden">Can you help Sarah decode this final anagram?</p>
+      <div class="hidden" class = "inputs">
+        <label for = "anagram"></label>
+        <input type = "text" id="anagram">
+        <button id ="sub10">Submit</button>
+      </div>
+    </div>
+    <div class ="hidden" id="nebula">
+      <img src="nebula.jpg" width="300" height="300">
+    </div>
+  </div>
+  <script>
+    document.getElementById('sub10').addEventListener('click',()=>{
+      if (document.getElementById('anagram').value.toLowerCase()==='nebula'){
+        window.location.href = 'index10.html'
+      } else {
+        alert ('Come on. Try harder. This is the final one!')
+      }
+    })
+  </script>
+</body>
+</html>

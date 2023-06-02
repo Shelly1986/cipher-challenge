@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 9</title>
+  <script src = "test9.js" type="module"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Clue 9</h1>
+  <div id = "text9">
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p class ="hidden" id="inscription">The inscription reads:
+    "R hvv blfi kzgs gl wrhxlevib'h gsivhslow!" </p>
+  <div id ="container9">
+    <div id = "atbash">
+      
+      <table class="hidden">
+      <th>A</th>
+                  <th>B</th>
+                  <th>C</th>
+                  <th>D</th>
+                  <th>E</th>
+                  <th>F</th>
+                  <th>G</th>
+                  <th>H</th>
+                  <th>I</th>
+                  <th>J</th>
+                  <th>K</th>
+                  <th>L</th>
+                  <th>M</th>
+                  <th>N</th>
+                  <th>O</th>
+                  <th>P</th>
+                  <th>Q</th>
+                  <th>R</th>
+                  <th>S</th>
+                  <th>T</th>
+                  <th>U</th>
+                  <th>V</th>
+                  <th>W</th>
+                  <th>X</th>
+                  <th>Y</th>
+                  <th>Z</th>
+              </tr>
+              <tr class = "data">
+                  <td>Z</td>
+                  <td>Y</td>
+                  <td>X</td>
+                  <td>W</td>
+                  <td>V</td>
+                  <td>U</td>
+                  <td>T</td>
+                  <td>S</td>
+                  <td>R</td>
+                  <td>Q</td>
+                  <td>P</td>
+                  <td>O</td>
+                  <td>N</td>
+                  <td>M</td>
+                  <td>L</td>
+                  <td>K</td>
+                  <td>J</td>
+                  <td>I</td>
+                  <td>H</td>
+                  <td>G</td>
+                  <td>F</td>
+                  <td>E</td>
+                  <td>D</td>
+                  <td>C</td>
+                  <td>B</td>
+                  <td>A</td>
+              </tr>
+          </table>
+          <div class="hidden" class="inputs">
+            <label for = "question9">Decoded Message: </label>
+            <input type = "text" id = "question9">
+            <button id ="sub9">Submit</button>
+          </div>
+      </div>
+      <div class = "hidden" id="manu">
+        <img src = "manu.png" width="200" height="200">
+      </div>
+    </div>
+  
+  <script>
+  document.getElementById('sub9').addEventListener('click',()=>{
+    if (document.getElementById('question9').value.toLowerCase()=== "i see your path to discovery's threshold"){
+      window.location.href = "index9.html"
+    } else {
+      alert('Not the right answer. Try Again!')
+    }
+  })
+  </script>
+</body>
+</html>

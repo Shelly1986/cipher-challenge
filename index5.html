@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 6</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <script src = "test6.js" type="module"></script>
+  
+</head>
+<body>
+  <h1>Clue 6</h1>
+  <div id ="text6">
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div id = 'table-container'>
+    <table id ="railfence" class="hidden">
+      
+    </table>
+  </div>
+  <br>
+  <br>
+  <div id = "answer6">
+    <label for = "railf" class="hidden">Decoded Message:</label>
+    <input type = "text" class = "hidden" id = "railf">
+    <button class ="hidden" id = "submit3">Submit</button>
+    <img src = "rail.png" width ="200" height="200" class="hidden">
+  </div>
+  
+  <script>
+    const railfence = document.getElementById('railfence');
+    for (let i = 0; i<2; i++){
+      let row = document.createElement('tr')
+      for (let j = 0; j<26; j++){
+        let data = document.createElement('td')
+        data.innerHTML = `<input maxlength="1" />`
+        row.appendChild(data)
+    }
+    railfence.appendChild(row)
+    }
+
+    const inputNodes = document.querySelectorAll("td input")
+    for (let i = 0; i < inputNodes.length - 1; i += 1) {
+      inputNodes[i].addEventListener("keyup", event => {
+        inputNodes[i+1].focus()
+      })
+    }
+
+    document.getElementById('submit3').addEventListener('click',()=>{
+    answer6 = document.getElementById('railf').value.replace(/\s+/g, '');;
+    
+    if(answer6.toLowerCase()==='searchbehindthebluecurtain'){
+        window.location.href= "index6.html";
+    }
+
+    else{
+        alert('Try again! Not the right answer')
+    }
+})
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clue 7</title>
+  <link rel="stylesheet" href="style.css">
+  <script src = "test7.js" type = "module"></script>
+</head>
+<body>
+  <h1>Clue 7</h1>
+  <div id = "text7">
+
+  </div>
+    <p class="hidden">Create the right pattern on the keyboard to go to the next clue.</p>
+    
+  
+  <div id = "container2">
+    <div class = "hidden" id="riddle3">
+      <h2>I am a pattern, a secret design</h2>
+      <h2>In squares on your right, you'll find me align.</h2>
+      <h2>From corner to corner, I stretch with grace,</h2>
+      <h2>Creating lines that cross in a special embrace.</h2>
+    </div>
+    <div class = "hidden" id = "symbols2">
+      <button id = "1">1</button>
+      <button id = "2">2</button>
+      <button id = "3">3</button>
+      <br>
+      <button id = "4">4</button>
+      <button id = "5">5</button>
+      <button id = "6">6</button>
+      <br>
+      <button id = "7">7</button>
+      <button id = "8">8</button>
+      <button id = "9">9</button>
+    </div>
+    <div id="container3">
+      <img src ="diagonal.png" width = "150" height = "150" class="hidden">
+      <button class = "hidden" id = "submit4">Submit</button>
+      <button class = "hidden" id = "clear">Clear</button>
+    </div>
+  </div>
+  <script>
+    const button_ids = [];
+    const alien_buttons = document.querySelectorAll('#symbols2 button');
+    
+    for (let i=0;i<alien_buttons.length;i++){
+        alien_buttons[i].addEventListener('click',()=>{
+          alien_buttons[i].style.backgroundColor = 'red';
+          if(!button_ids.includes(alien_buttons[i].id)){
+            button_ids.push(alien_buttons[i].id)
+          console.log(button_ids)
+          }
+        })
+      }
+    document.querySelector('#clear').addEventListener('click',()=>{
+      button_ids.length = 0;
+      for (bts of alien_buttons){ 
+        bts.style.backgroundColor = 'white';
+      } 
+    })
+
+    document.querySelector('#submit4').addEventListener('click', () => {
+      if (button_ids.length === 5 && button_ids.includes('1') && button_ids.includes('3') && button_ids.includes('5') && button_ids.includes('7') && button_ids.includes('9')) {
+        window.location.href = 'index7.html';
+      } else {
+        alert('Not the right pattern. Try again!');
+  }
+});
+    
+  
+  </script>
+</body>
+</html>
