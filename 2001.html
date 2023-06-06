@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question3</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+
+    body{
+      background: black;
+    }
+
+  .question3{
+      font-family: 'Special Elite';
+      margin-top: 10px;
+      margin-left: 40px;
+      margin-right: 40px;
+      gap: 10px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #text,p,label{
+    color: white;
+    font-size: 20px;
+    font-family: 'Special Elite';
+    line-height: 1.5;
+    margin: 60px;
+  }
+
+  #submit{
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  color:black;
+  font-size: 20px;
+  }
+
+  #answer3{
+    font-size: 20px;
+    color: black;
+    height: 40px;
+  }
+
+  #submit:active{
+    background-color: black;
+    color: white;
+  }
+
+  .galaxy{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  h1{
+    margin-top: 20px;
+    color: white;
+    font-family: "Special Elite";
+    text-align: center;
+}
+
+#galaxy{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 30px;
+}
+
+#coordinates{
+  border-radius: 15px;
+  border: 5px solid white;
+  
+
+}
+  </style>
+</head>
+<body>
+  <h1>Clue 3</h1>
+  <div id = "text">
+
+  </div>
+  <div class = "question3">
+    <img src = "https://content.instructables.com/FUF/5ZOO/ISCBT0KN/FUF5ZOOISCBT0KN.jpg?auto=webp&fit=bounds&frame=1">
+    <div id = "galaxy">
+      <img src="coordinates.png" width="200" height="200" id="coordinates">
+      <div>
+        <label for = "answer3">Your Answer:</label>
+        <input type = "text" id ="answer3">
+        <button id = "submit">Submit</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    string_text1 = "Encouraged by her success in decoding the previous message and solving the riddle, Sarah stumbles upon a hidden compartment within the archives. Inside, she discovers an encrypted document. The document is filled with a series of seemingly random numbers: 44 32 51-22 11 13 11 31 44 42 31-52 51 45 32 44 43 33 51-42 34-32 42 41 41 51 33-42 33-44 32 51-33 51 21 54 13 11-31 13 54 34 44 51 24. Decode the numbers to move to the next level.";
+    var my_array = string_text1.split("");
+    var loopTimer;
+    function typedtext(){
+    if (my_array.length>0){
+        document.getElementById('text').innerHTML += my_array.shift();
+    }
+    else{
+        document.querySelector('.question3').style.display = "flex";
+        clearTimeout(loopTimer);
+        return false;
+    }
+    loopTimer = setTimeout('typedtext()',35);
+  }
+
+  typedtext()
+  
+  
+
+  document.getElementById('submit').addEventListener('click',()=>{
+    answer3 = document.getElementById('answer3').value;
+    if(answer3.toLowerCase()==='the galactic keystone is hidden in the nebula cluster'){
+        window.location.href= "3006.html";
+    }
+
+    else{
+        alert('Try again! Not the right answer')
+    }
+})
+  </script>
+</body>
+</html>

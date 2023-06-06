@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="test.js" type="module">
+    </script>
+    <title>Question 4</title>
+  </head>
+  <body>
+    <h1>Clue 4</h1>
+    <div id="testdiv">
+
+    </div>
+    <div class = "decoder">
+      
+      <div id = "decoder1">
+        <p class="hidden">Use the keyboard and the image <a href="https://miro.medium.com/v2/resize:fit:1400/1*4tHgmNenIr6KT586F03CCg.jpeg" target = "_blank">here</a> to decode the riddle:
+        <input type = "text" id="key4" disabled>
+        <button class = "submit" id="sub">Submit</button>
+        <button id = "clear">Clear</button></p>
+      </div>
+      <div class="hidden">
+        <button id = "A" class ="pigpens"></button>
+        <button id = "B" class ="pigpens"></button>
+        <button id = "C" class ="pigpens"></button>
+        <button id = "D" class ="pigpens"></button>
+        <button id = "E" class ="pigpens"></button>
+        <button id = "F" class ="pigpens"></button>
+        <button id = "G" class ="pigpens"></button>
+        <button id = "H" class ="pigpens"></button>
+        <button id = "I" class ="pigpens"></button>
+        <button id = "J" class ="pigpens"></button>
+        <button id = "K" class ="pigpens"></button>
+        <button id = "L" class ="pigpens"></button>
+        <button id = "M" class ="pigpens"></button>
+        <button id = "N" class ="pigpens"></button>
+        <button id = "O" class ="pigpens"></button>
+        <button id = "P" class ="pigpens"></button>
+        <button id = "Q" class ="pigpens"></button>
+        <button id = "R" class ="pigpens"></button>
+        <button id = "S" class ="pigpens"></button>
+        <button id = "T" class ="pigpens"></button>
+        <button id = "U" class ="pigpens"></button>
+        <button id = "V" class ="pigpens"></button>
+        <button id = "W" class ="pigpens"></button>
+        <button id = "X" class ="pigpens"></button>
+        <button id = "Y" class ="pigpens"></button>
+        <button id = "Z" class ="pigpens"></button>
+      </div>
+    </div>
+    <script>
+      const buttons = document.querySelectorAll('.pigpens')
+      for (let i = 0; i<buttons.length; i++){
+        let bkimage = buttons[i].id + '.png';
+        buttons[i].style.backgroundImage = `url(${bkimage})`;
+      }
+      for (let i = 0; i<buttons.length; i++){
+        buttons[i].addEventListener('click',(event)=>{
+          let identity = event.target.id;
+          document.getElementById('key4').value += identity;
+        })
+      }
+
+      document.getElementById('sub').addEventListener('click',()=>{
+        let user_answer = document.getElementById('key4').value;
+        if (user_answer.toLowerCase() === 'pencil'){
+          window.location.href= "4009.html";
+        }
+        else{
+          alert('Try again! Not the right answer');
+        }
+      })
+
+      document.getElementById('clear').addEventListener('click',()=>{
+        document.getElementById('key4').value = '';
+      })
+    </script>
+  </body>
+</html>

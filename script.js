@@ -39,7 +39,7 @@ document.getElementById('submit').addEventListener('click',()=>{
     answer1 = document.getElementById('answer1').value;
     console.log(answer1)
     if(answer1.toLowerCase()==='hello earthlings'){
-        window.location.href= "index1.html";
+        window.location.href= "1000.html";
     }
 
     else{
