@@ -4,7 +4,7 @@ body{
     background: black;
     margin-left: 60px;
     font-family: "Special Elite";
-    width: 99vw;
+    max-width: 99vw;
   
 }
 
@@ -24,7 +24,7 @@ h1{
   line-height: 1.5;
   margin: 20px;
   height: 80px;
-  width: 1500px;
+  max-width: 100em;
   margin-top: 20px;
   text-size-adjust: none;
 }
@@ -35,7 +35,7 @@ label{
   font-family: 'Special Elite';
 }
 
-#answer1,#railf,#key4,#answer5,#morse,#question9,#anagram{
+#answer1,#railf,#key4,#answer5,#morse,#question9,#anagram,#key1{
   color: black;
   width: 400px;
   height: 40px;

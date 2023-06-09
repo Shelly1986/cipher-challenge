@@ -1,6 +1,6 @@
 
 
-string_text = 'One fateful evening, while working at Intergalactic Research Institute, Sarah stumbled upon a strange tranmission. The message was: "ROVVY OKBDRVSXQC". The key is the lowest positive two digit number. Enter the key below to decode the message.';
+string_text = 'One fateful evening, while working at Intergalactic Research Institute, Sarah stumbled upon a strange tranmission. The message was: "RS REWKX". The key is the lowest positive two digit number. Enter the key below to decode the message.';
 letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 table_data = document.querySelectorAll('td')
 var my_array = string_text.split("");
@@ -22,8 +22,8 @@ function typedtext(){
 
 typedtext()
 
-document.getElementById('key1').addEventListener("keypress",function(event){
-    if(event.key === "Enter"){
+document.getElementById('sub10').addEventListener("click",function(event){
+    
         var key = parseInt(document.getElementById('key1').value);
         for (let i=0;i<=26;i++){
             table_data[i].innerHTML = letters[i+key]
@@ -32,13 +32,13 @@ document.getElementById('key1').addEventListener("keypress",function(event){
             }
         }
         }
-    }
+    
 )
 
 document.getElementById('submit').addEventListener('click',()=>{
     answer1 = document.getElementById('answer1').value;
     console.log(answer1)
-    if(answer1.toLowerCase()==='hello earthlings'){
+    if(answer1.toLowerCase()==='hi human'){
         window.location.href= "1000.html";
     }
 
